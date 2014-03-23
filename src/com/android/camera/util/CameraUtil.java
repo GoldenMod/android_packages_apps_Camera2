@@ -195,6 +195,9 @@ public class CameraUtil {
     }
 
     public static boolean isSupported(Parameters params, String key) {
+        if (key.equals("saturation-max") || key.equals("contrast-max") || key.equals("sharpness-max")) {
+            return false;
+        }
         return (params.get(key) != null && !"null".equals(params.get(key)));
     }
 
